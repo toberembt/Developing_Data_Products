@@ -1,0 +1,30 @@
+---
+title: "My First Leaflet Map"
+author: "Tyler Oberembt"
+date: "January 30, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## First Map Ever
+```{r}
+library(leaflet)
+```
+
+## Create a map of Costa Rica
+```{r, eval=FALSE}
+my_map <- leaflet() %>%
+  addTiles()
+my_map
+```
+
+##Create a link to ATV tour to get information.
+```{r}
+atv <- c("<a href='http://www.jungleatv.com/en/activity/15668/4x4-atv-sxs-tour'>ATV tour</a>")
+leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat=9.171089, lng = -83.739868, popup = atv)
+```
